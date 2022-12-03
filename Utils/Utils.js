@@ -27,8 +27,4 @@ exports.processFile = async (file, processFunction = (data) => {console.log(data
 
   }
 
-  return;
-
-
-
-}
+};
