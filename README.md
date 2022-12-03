@@ -8,7 +8,7 @@ This is a repository for the Advent of Code challenges. I make no claims to the 
         /\  /\                                            ADVENT OF CODE                                                  /\  /\
        /\*   /\                                                2022                                                      /\*   /\
       /\()* ()/\                                          MERRY CHRISTMAS                                               /\()* ()/\  
-     /\*  ()*  /\                                     AND GODDWILL TO ALL MEN!                                         /\*  ()*  /\
+     /\*  ()*  /\                                       AND GODDWILL TO ALL                                            /\*  ()*  /\
     /\()*    *()/\                                                                                                    /\()*    *()/\
           ||                                                                                                                ||
            
