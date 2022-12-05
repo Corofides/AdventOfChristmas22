@@ -17,7 +17,7 @@ Utils.processFile('input.txt', (line) => {
   const checkIfCrateExists = /\[[A-Z]\]/;
 
   if (index >= 15) {
-    return;
+    //return;
   }
 
   index++;
@@ -77,21 +77,49 @@ Utils.processFile('input.txt', (line) => {
 
     const lineMatch = checkIfInstruction.exec(line);
 
-    console.log("Line", line, lineMatch);
+    //console.log("Line", line, lineMatch);
 
     instructions.push([lineMatch[1], lineMatch[2], lineMatch[3]])
 
 
   }
 
-
   index++;
 
 }).then(() => {
 
-  console.log("Our Stacks");
+  //console.log(instructions);
+
+  instructions.forEach((instruction) => {
+
+    //Get the array we actually care about.
+    const currentStack = crateStacks[instruction[1] - 1];
+    const removedCrates = currentStack.splice(currentStack.length - instruction[0], instruction[0]);
+
+
+    //console.log("Updated Current Stack", currentStack);
+    //console.log("Removed Items", removedCrates);
+
+    //Reverse it.
+    removedCrates.reverse();
+
+    crateStacks[instruction[2] - 1] = crateStacks[instruction[2] - 1].concat(removedCrates);
+
+
+  });
+
+  //console.log("Our Stacks");
   console.log(crateStacks);
-  console.log("Instructions");
-  console.log(instructions);
+
+  let topCrates = '';
+
+  crateStacks.forEach((stack) => {
+    topCrates = topCrates + stack[stack.length - 1];
+  })
+
+  console.log(topCrates);
+
+  //console.log("Instructions");
+  //console.log(instructions);
 
 });
