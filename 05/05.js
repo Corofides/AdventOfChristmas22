@@ -103,6 +103,9 @@ Utils.processFile('input.txt', (line) => {
     //Reverse it.
     removedCrates.reverse();
 
+    //Part 2, don't reverse it..? This seems waaay to easy.
+    removedCrates.reverse();
+
     crateStacks[instruction[2] - 1] = crateStacks[instruction[2] - 1].concat(removedCrates);
 
 
@@ -115,7 +118,7 @@ Utils.processFile('input.txt', (line) => {
 
   crateStacks.forEach((stack) => {
     topCrates = topCrates + stack[stack.length - 1];
-  })
+  });
 
   console.log(topCrates);
 
